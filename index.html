@@ -1,0 +1,40 @@
+<style>
+  /* Définition des styles pour le bouton */
+  .bouton {
+    background-color: red; /* couleur de fond rouge */
+    color: white; /* couleur du texte blanc */
+    border: none; /* pas de bordure */
+    padding: 10px 20px; /* marge intérieure */
+    font-size: 16px; /* taille de police */
+    cursor: pointer; /* curseur de souris en forme de main */
+    position: relative; /* position relative pour permettre le positionnement absolu de l'élément enfant */
+  }
+
+  /* Définition des styles pour l'animation de clignotement */
+  .bouton:hover::before {
+    content: ''; /* contenu vide */
+    position: absolute; /* position absolue par rapport au parent */
+    top: 0; /* bord supérieur aligné avec le parent */
+    left: 0; /* bord gauche aligné avec le parent */
+    right: 0; /* bord droit aligné avec le parent */
+    bottom: 0; /* bord inférieur aligné avec le parent */
+    background-color: red; /* couleur de fond rouge */
+    opacity: 0.5; /* opacité de 50% */
+    animation: clignoter 0.5s infinite; /* animation de clignotement infinie */
+  }
+
+  /* Définition des styles pour l'animation de zoom avant */
+  .bouton:hover {
+    transform: scale(1.2); /* effet de zoom avant */
+    transition: transform 0.2s ease-in-out; /* transition de 0.2s avec un effet ease-in-out */
+  }
+
+  /* Définition de l'animation de clignotement */
+  @keyframes clignoter {
+    0% { opacity: 0; } /* à 0% d'opacité */
+    50% { opacity: 1; } /* à 50% d'opacité */
+    100% { opacity: 0; } /* à 100% d'opacité */
+  }
+</style>
+
+<button class="bouton">Mon bouton</button>
